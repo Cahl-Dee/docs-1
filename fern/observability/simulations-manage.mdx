@@ -157,7 +157,7 @@ curl -X POST "https://api.vapi.ai/eval/simulation/run" \
 
 - A retry with the same key and the same body returns the run the first request created, with `reused: true`. It doesn't start or bill the run again.
 - Reusing a key with a different body returns `409`. Use a new key for a different run.
-- If a request returns `503`, retry it with the same key.
+- If a request returns `503` with `code: SIMULATION_WORK_DISABLED`, simulations are paused across Vapi. Retry later. Any other `503` can be retried with the same key.
 - A key is up to 255 printable ASCII characters and is scoped to your organization. An empty or invalid key returns `400`.
 - A key stays bound to its run for as long as the run exists. It does not expire after a set time.
 

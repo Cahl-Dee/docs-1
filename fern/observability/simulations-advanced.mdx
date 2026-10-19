@@ -43,6 +43,8 @@ During a simulation, the [**assistant**](/assistants) or [**squad**](/squads) un
 
 <Note>
 Suites that [Composer generates](/composer#generate-tests-for-an-assistant) come with a mock already set for every tool that would reach an external system, including handoffs and transfers that can't run safely. Tools that only end or route the conversation, such as end call, voicemail, DTMF, and static handoffs, run as they would on a real call. To review or change a generated mock, edit the suite and open **Tool mocks & webhooks**: change the **Mock result**, or turn off **Enabled** to run that tool live. Suites you build yourself start with no mocks, so every tool runs for real until you add one.
+
+Generated mocks cover the tools in the assistant's tool list and its handoff destinations. A tool that only an assistant [**hook**](/assistants/assistant-hooks) calls isn't mocked, and the assistant's [server messages](/server-url), such as the end-of-call report, still go to its server URL. Check both before you run a generated suite against production systems.
 </Note>
 
 <Tabs>

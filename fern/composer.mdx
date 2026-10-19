@@ -184,7 +184,7 @@ Ask Composer to generate tests for an assistant, for example "Generate a test su
     Select **Generate coverage** to accept the draft, or type the changes you want in the chat. Composer revises the draft and asks you to review it again. It never generates a suite from requirements you haven't agreed to.
   </Step>
   <Step title="Review the suite">
-    Composer generates the suite and shows it on a card. Each simulation covers one caller goal, and each requirement it covers becomes one of its success criteria. The card shows how many requirements are covered and why any aren't, and lists the handoffs and transfers the suite doesn't test as **Not tested**, with the reason. Every tool that would reach an external system is [mocked by default](/observability/simulations-advanced#mock-tool-responses), and each simulation lists the tools it mocks.
+    Composer generates the suite and shows it on a card. Each simulation covers one caller goal, and each requirement it covers becomes one of its success criteria. The card shows how many requirements are covered and why any aren't, and lists the handoffs and transfers the suite doesn't test as **Not tested**, with the reason. Every tool in the assistant's tool list that would reach an external system is [mocked by default](/observability/simulations-advanced#mock-tool-responses), and each simulation lists the tools it mocks. Tools that only a hook calls aren't mocked.
   </Step>
   <Step title="Run the suite">
     Select **Run suite** on the card, or ask Composer to run it. The suite runs once, in chat, against the assistant it was generated for. Composer doesn't wait for the run: progress and results appear at the run's dashboard URL. When the run ends, ask Composer about the results.
