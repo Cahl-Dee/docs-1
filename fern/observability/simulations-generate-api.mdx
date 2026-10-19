@@ -26,7 +26,7 @@ You then run the suite with the existing [`POST /eval/simulation/run`](/observab
 - An HTTP client with a long timeout. Suite generation can take up to 3 minutes, so set a client timeout of at least 200 seconds.
 
 <Warning>
-  Generated simulations mock every tool that would reach an external system, and the response lists them in `mockedTools`. Tools you add to a simulation later, or mocks you turn off, run for real. See [**Mock tool responses**](/observability/simulations-advanced#mock-tool-responses).
+  Generated simulations mock every tool in the assistant's tool list that would reach an external system, and the response lists them in `mockedTools`. Tools that only an assistant hook calls aren't mocked, and the assistant's server messages, such as the end-of-call report, still go to its server URL. Tools you add to a simulation later, or mocks you turn off, run for real. See [**Mock tool responses**](/observability/simulations-advanced#mock-tool-responses).
 </Warning>
 
 ## Generate and run a suite
